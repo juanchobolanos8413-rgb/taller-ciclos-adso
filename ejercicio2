@@ -1,0 +1,29 @@
+       int base;
+        int exponente;
+        long potencia = 1;
+        long factorial = 1;
+
+        System.out.print("Ingrese la base: ");
+        base = sc.nextInt();
+
+        System.out.print("Ingrese el exponente: ");
+        exponente = sc.nextInt();
+
+        if (base > 0 && exponente > 0) {
+
+            for (int i = 1; i <= exponente; i++) {
+                potencia = potencia * base;
+            }
+
+            for (int i = 1; i <= exponente; i++) {
+                factorial = factorial * i;
+            }
+
+            System.out.println("Potencia: " + potencia);
+            System.out.println("Factorial: " + factorial);
+
+        } else {
+            System.out.println("Ingrese numeros positivos, mayores a 0");
+        }
+    }
+}
