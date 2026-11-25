@@ -1,0 +1,24 @@
+ Scanner sc = new Scanner(System.in);
+
+        int N;
+        int suma = 0;
+        int cont = 0;
+        double promedio;
+
+        System.out.print("Ingresa un numero mayor a 20: ");
+        N = sc.nextInt();
+
+        if (N > 20) {
+            for (int i = N; i >= 1; i--) {
+                if ((i % 3 == 0 && i % 5 != 0) || (i % 5 == 0 && i % 3 != 0)) {
+                    System.out.println("" + i + "");
+                    cont++;
+                    suma = suma + i;
+                }
+            }
+            promedio = (double) suma / cont;
+            System.out.println("Cantidad: " + cont + "");
+            System.out.println("Promedio: " + promedio + "");
+        } else {
+            System.out.println("El numero debe ser mayor a 20");
+        }
