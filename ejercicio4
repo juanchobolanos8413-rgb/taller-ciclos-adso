@@ -1,0 +1,40 @@
+   System.out.print("Ingrese la cantidad de dias: ");
+        dias = sc.nextInt();
+
+        if (dias > 0) {
+
+            for (int i = 1; i <= dias; i++) {
+                System.out.print("Temperatura del dia " + i + ": ");
+                temperatura = sc.nextDouble();
+
+                suma = suma + temperatura;
+
+                if (i == 1 || temperatura > maxima) {
+                    maxima = temperatura;
+                    diaMaximo = i;
+                }
+
+                if (i == 1 || temperatura < minima) {
+                    minima = temperatura;
+                    diaMinimo = i;
+                }
+
+                if (temperatura > 28.0) {
+                    cont++;
+                }
+            }
+
+            promedio = suma / dias;
+
+            System.out.println("Promedio: " + promedio);
+            System.out.println("Temperatura maxima: " + maxima);
+            System.out.println("Dia de temperatura maxima: " + diaMaximo);
+            System.out.println("Temperatura minima: " + minima);
+            System.out.println("Dia de temperatura minima: " + diaMinimo);
+            System.out.println("Dias superiores a 28 grados: " + cont);
+
+        } else {
+            System.out.println("La cantidad de dias debe ser positiva");
+        }
+    }
+}
