@@ -1,0 +1,35 @@
+     Scanner sc = new Scanner(System.in);
+
+        double compra;
+        double descuento = 0;
+        double total;
+        String tarjeta;
+
+        System.out.print("Ingrese el valor de la compra: ");
+        compra = sc.nextDouble();
+
+        System.out.print("Tiene tarjeta de fidelizacion (si/no): ");
+        tarjeta = sc.next();
+
+        if (compra >= 200000) {
+            descuento = compra * 0.15;
+        } else if (compra >= 100000) {
+            descuento = compra * 0.08;
+        } else {
+            descuento = 0;
+        }
+
+        total = compra - descuento;
+
+        if (tarjeta.equalsIgnoreCase("si")) {
+            descuento = descuento + (total * 0.05);
+        }
+
+        total = compra - descuento;
+
+        System.out.println("Valor inicial: $" + compra);
+        System.out.println("Descuento total: $" + descuento);
+        System.out.println("Total a pagar: $" + total);
+    }
+}
+}
